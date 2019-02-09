@@ -3,6 +3,7 @@ package com.bsoftgroup.msconsulta.integracion.resources;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,6 +19,8 @@ public class ConsultaRestController {
 
 	@Autowired
 	private ConsultaServiceInterface consultaService;
+	@Autowired
+	private Environment environment;
 
 	public ConsultaRestController() {
 	}
@@ -25,6 +28,7 @@ public class ConsultaRestController {
 	@GetMapping(path = "/facturacion/idCliente/{idCliente}/idEmpresa/{idEmpresa}")
 	public List<ServicioVO> getServicios(@PathVariable("idCliente") Integer idCliente,
 			@PathVariable("idEmpresa") Integer idEmpresa) {
+		System.out.println("Puerto:"+environment.getProperty(("local.server.port")));
 		// TODO Auto-generated method stub
 		List<ServicioVO> serviciosvo = null;
 		try {
