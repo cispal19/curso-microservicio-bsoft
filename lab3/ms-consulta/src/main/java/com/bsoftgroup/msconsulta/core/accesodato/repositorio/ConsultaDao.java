@@ -34,8 +34,8 @@ public class ConsultaDao implements ConsultaDaoInterface {
 		String SQL = "SELECT \r\n" + " c.codigo as cliente, \r\n" + " c.nombres as nombres,\r\n"
 				+ " p.codigo as producto, \r\n" + " p.descripcion as descripcion,\r\n" + " p.precio as precio,\r\n"
 				+ " cp.codigo as recibo,\r\n" + " cp.monto as deuda,\r\n" + " cp.estado as estado \r\n"
-				+ " FROM esq_pwj_060119.TBL_CLIENTE c \r\n" + " INNER JOIN esq_pwj_060119.TBL_CLIENTE_PRODUCTO cp on c.codigo = cp.cliente \r\n"
-				+ " INNER JOIN esq_pwj_060119.TBL_PRODUCTO p on p.codigo = cp.producto\r\n" + " and c.codigo = ? and c.empresa = ? ";
+				+ " FROM esq_pwj_101118.TBL_CLIENTE c \r\n" + " INNER JOIN esq_pwj_101118.TBL_CLIENTE_PRODUCTO cp on c.codigo = cp.cliente \r\n"
+				+ " INNER JOIN esq_pwj_101118.TBL_PRODUCTO p on p.codigo = cp.producto\r\n" + " and c.codigo = ? and c.empresa = ? ";
 		try {
 			con.getConexion().setAutoCommit(false);
 			pstmt = con.getConexion().prepareStatement(SQL);

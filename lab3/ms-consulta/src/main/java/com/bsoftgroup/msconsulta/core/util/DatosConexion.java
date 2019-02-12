@@ -7,10 +7,7 @@ public class DatosConexion {
 	private String password;
 
 	public DatosConexion() {
-		this.url = "jdbc:postgresql://localhost:5432/postgres";
-		this.driverclassname = "org.postgresql.Driver";
-		this.username = "postgres";
-		this.password = "postgres";
+		
 	}
 	
 	public DatosConexion(String driverclassname, String url, String username, String password) {

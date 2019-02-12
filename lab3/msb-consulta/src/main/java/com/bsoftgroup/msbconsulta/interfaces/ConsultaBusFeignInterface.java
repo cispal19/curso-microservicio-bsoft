@@ -12,12 +12,15 @@ import com.bsoftgroup.msbconsulta.objetos.ServicioVO;
 
 
 //@FeignClient(name="ms-consulta", url="localhost:8081")
-@FeignClient(name="ms-consulta")
+//@FeignClient(name="ms-consulta")
+@FeignClient(name="apigateway")
+
 @RibbonClient(name="ms-consulta")
 public interface ConsultaBusFeignInterface {
 
 	
-	@GetMapping(path = "/msconsulta/facturacion/idCliente/{idCliente}/idEmpresa/{idEmpresa}")
+//	@GetMapping(path = "/msconsulta/facturacion/idCliente/{idCliente}/idEmpresa/{idEmpresa}")
+	@GetMapping(path = "/ms-consulta/msconsulta/facturacion/idCliente/{idCliente}/idEmpresa/{idEmpresa}")
 	public List<ServicioVO> getServicios(@PathVariable("idCliente") Integer idCliente,
 			@PathVariable("idEmpresa") Integer idEmpresa);
 	
